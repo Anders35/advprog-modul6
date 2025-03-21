@@ -9,3 +9,9 @@
 ![Commit 2 screen capture](/assets/images/commit2.png)
 
 The new `handle_connection` function now not only read incoming HTTP requests but also respond with a valid HTTP response. It constructs a proper HTTP response, starting with the status line `"HTTP/1.1 200 OK"`, indicating a successful request. The response body is read from `hello.html` using `fs::read_to_string`, and its length is determined to set the `Content-Length` header. Finally, the response is formatted and sent back to the client using `stream.write_all`.
+
+## Commit 3 Reflection Notes
+
+![Commit 3 screen capture](/assets/images/commit3.png)
+
+First, it extract the request line and compare the requested path. If the path is `/`, the server responds with `HTTP/1.1 200 OK` and serves `hello.html`. Otherwise, it responds with `HTTP/1.1 404 NOT FOUND` and serves `404.html`.
