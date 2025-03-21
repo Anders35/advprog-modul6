@@ -23,3 +23,7 @@ When accessing `/sleep` in one browser tab and `/` in another, I noticed that th
 ## Commit 5 Reflection Notes
 
 The server is now multithreaded using a ThreadPool that manages 4 worker threads. Each incoming request is assigned to an available thread. Therefore, the server can handle multiple connections simultaneously.
+
+## Commit Bonus Reflection Notes
+
+The difference of `new` and `build` is that `build` includes an assertion to ensure that the pool size is greater than zero. This prevents potential runtime errors and improves code robustness by enforcing a valid configuration at the time of creation.  Functionally, `build` and `new` are equivalent, but using `build` makes the intent of constructing a thread pool clearer.
