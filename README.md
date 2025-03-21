@@ -15,3 +15,7 @@ The new `handle_connection` function now not only read incoming HTTP requests bu
 ![Commit 3 screen capture](/assets/images/commit3.png)
 
 First, it extract the request line and compare the requested path. If the path is `/`, the server responds with `HTTP/1.1 200 OK` and serves `hello.html`. Otherwise, it responds with `HTTP/1.1 404 NOT FOUND` and serves `404.html`.
+
+## Commit 4 Reflection Notes
+
+When accessing `/sleep` in one browser tab and `/` in another, I noticed that the second request had to wait for the first one to finish before it could be processed. This happens because the server handles all requests sequentially in a single thread.  
