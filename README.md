@@ -19,3 +19,7 @@ First, it extract the request line and compare the requested path. If the path i
 ## Commit 4 Reflection Notes
 
 When accessing `/sleep` in one browser tab and `/` in another, I noticed that the second request had to wait for the first one to finish before it could be processed. This happens because the server handles all requests sequentially in a single thread.  
+
+## Commit 5 Reflection Notes
+
+The server is now multithreaded using a ThreadPool that manages 4 worker threads. Each incoming request is assigned to an available thread. Therefore, the server can handle multiple connections simultaneously.
